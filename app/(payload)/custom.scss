@@ -1,0 +1,467 @@
+/* Custom Payload CMS Admin Panel Styles */
+/* ======================================= */
+
+/* ===== Light Mode Colors ===== */
+:root {
+  --theme-elevation-0: #ffffff;
+  --theme-elevation-50: #f8fafc;
+  --theme-elevation-100: #f1f5f9;
+  --theme-elevation-150: #e2e8f0;
+  --theme-elevation-200: #cbd5e1;
+  --theme-elevation-250: #94a3b8;
+  --theme-elevation-300: #64748b;
+  --theme-elevation-350: #475569;
+  --theme-elevation-400: #334155;
+  --theme-elevation-450: #1e293b;
+  --theme-elevation-500: #0f172a;
+
+  /* Brand Colors */
+  --theme-success-50: #ecfdf5;
+  --theme-success-100: #d1fae5;
+  --theme-success-500: #10b981;
+  --theme-success-600: #059669;
+
+  --theme-error-50: #fef2f2;
+  --theme-error-100: #fee2e2;
+  --theme-error-500: #ef4444;
+  --theme-error-600: #dc2626;
+
+  --theme-warning-50: #fffbeb;
+  --theme-warning-100: #fef3c7;
+  --theme-warning-500: #f59e0b;
+  --theme-warning-600: #d97706;
+
+  --theme-text: #0f172a;
+  --theme-bg: #ffffff;
+}
+
+/* ===== Dark Mode Colors - ปรับให้อ่านง่ายขึ้น ===== */
+[data-theme="dark"] {
+  --theme-elevation-0: #0f172a;
+  --theme-elevation-50: #1e293b;
+  --theme-elevation-100: #334155;
+  --theme-elevation-150: #475569;
+  --theme-elevation-200: #64748b;
+  --theme-elevation-250: #94a3b8;
+  --theme-elevation-300: #cbd5e1;
+  --theme-elevation-350: #e2e8f0;
+  --theme-elevation-400: #f1f5f9;
+  --theme-elevation-450: #f8fafc;
+  --theme-elevation-500: #ffffff;
+
+  --theme-text: #f1f5f9;
+  --theme-bg: #0f172a;
+  
+  /* ปรับ success/error/warning สำหรับ dark mode */
+  --theme-success-50: #064e3b;
+  --theme-success-100: #065f46;
+  --theme-success-500: #34d399;
+  --theme-success-600: #6ee7b7;
+
+  --theme-error-50: #450a0a;
+  --theme-error-100: #7f1d1d;
+  --theme-error-500: #f87171;
+  --theme-error-600: #fca5a5;
+
+  --theme-warning-50: #451a03;
+  --theme-warning-100: #78350f;
+  --theme-warning-500: #fbbf24;
+  --theme-warning-600: #fcd34d;
+}
+
+/* ===== Login Page Styles ===== */
+/* Light mode: ไม่กำหนด background ให้ใช้ค่า default ของ Payload (สีขาว) */
+/* Dark mode: พื้นหลังสีเข้ม */
+[data-theme="dark"] .login {
+  background: #0f172a;
+  
+  /* Labels ในหน้า login dark mode */
+  .field-label,
+  label {
+    color: #e2e8f0 !important;
+  }
+  
+  /* Description text */
+  .field-description {
+    color: #94a3b8 !important;
+  }
+  
+  /* Links */
+  a {
+    color: #60a5fa !important;
+    
+    &:hover {
+      color: #93c5fd !important;
+    }
+  }
+}
+
+/* ===== Logo Wrapper Styles ===== */
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0;
+  
+  img {
+    max-height: 40px;
+    width: auto;
+  }
+  
+  /* Light mode: แสดง logo-light, ซ่อน logo-dark */
+  .logo-light {
+    display: block;
+  }
+  .logo-dark {
+    display: none;
+  }
+}
+
+/* Dark mode: แสดง logo-dark, ซ่อน logo-light */
+[data-theme="dark"] .logo-wrapper {
+  .logo-light {
+    display: none;
+  }
+  .logo-dark {
+    display: block;
+  }
+}
+
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  svg {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* ===== Dark Mode Text Improvements ===== */
+[data-theme="dark"] {
+  /* Labels และ Text ทั่วไป */
+  .field-label,
+  label {
+    color: #e2e8f0 !important;
+  }
+  
+  /* Description text */
+  .field-description,
+  .field-type .field-description {
+    color: #94a3b8 !important;
+  }
+  
+  /* Input fields */
+  input,
+  textarea,
+  select {
+    background-color: #1e293b !important;
+    border-color: #475569 !important;
+    color: #f1f5f9 !important;
+    
+    &::placeholder {
+      color: #64748b !important;
+    }
+    
+    &:focus {
+      border-color: #3b82f6 !important;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3) !important;
+    }
+  }
+  
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    color: #f8fafc !important;
+  }
+  
+  /* Paragraphs และ text content */
+  p, span, div {
+    &:not([class*="btn"]):not([class*="pill"]) {
+      color: inherit;
+    }
+  }
+  
+  /* Links */
+  a:not(.btn) {
+    color: #60a5fa !important;
+    
+    &:hover {
+      color: #93c5fd !important;
+    }
+  }
+  
+  /* Breadcrumb */
+  .step-nav {
+    a, span {
+      color: #94a3b8 !important;
+    }
+    a:hover {
+      color: #e2e8f0 !important;
+    }
+  }
+  
+  /* Document title */
+  .doc-header__title {
+    h1 {
+      color: #f8fafc !important;
+    }
+  }
+  
+  /* Table */
+  .table {
+    th {
+      background: #1e293b !important;
+      color: #e2e8f0 !important;
+      border-color: #334155 !important;
+    }
+    
+    td {
+      background: #0f172a !important;
+      color: #cbd5e1 !important;
+      border-color: #1e293b !important;
+    }
+    
+    tr:hover td {
+      background: #1e293b !important;
+    }
+  }
+  
+  /* Sidebar */
+  .nav {
+    background: #0f172a !important;
+    border-color: #1e293b !important;
+    
+    a {
+      color: #cbd5e1 !important;
+      
+      &:hover,
+      &.active {
+        color: #f8fafc !important;
+        background: #1e293b !important;
+      }
+    }
+    
+    .nav-group__toggle {
+      color: #94a3b8 !important;
+    }
+  }
+  
+  /* Cards */
+  .card {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    
+    &:hover {
+      border-color: #3b82f6 !important;
+    }
+  }
+  
+  /* Dashboard cards */
+  .dashboard__card {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    
+    h4, span {
+      color: #e2e8f0 !important;
+    }
+    
+    &:hover {
+      border-color: #3b82f6 !important;
+      background: #334155 !important;
+    }
+  }
+  
+  /* Rich text editor */
+  .rich-text,
+  .lexical-editor {
+    background: #1e293b !important;
+    color: #e2e8f0 !important;
+    
+    .editor-container {
+      background: #1e293b !important;
+    }
+    
+    p, span, div {
+      color: #e2e8f0 !important;
+    }
+    
+    a {
+      color: #60a5fa !important;
+    }
+  }
+  
+  /* Popup / Modal */
+  .popup,
+  .modal {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    
+    .popup__content {
+      background: #1e293b !important;
+    }
+  }
+  
+  /* Dropdown */
+  .popup-button-list {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    
+    button {
+      color: #e2e8f0 !important;
+      
+      &:hover {
+        background: #334155 !important;
+      }
+    }
+  }
+  
+  /* Date/time display */
+  .date,
+  time {
+    color: #94a3b8 !important;
+  }
+}
+
+/* ===== Button Styles ===== */
+.btn {
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  
+  &--style-primary {
+    background: #3b82f6 !important;
+    border-color: #3b82f6 !important;
+    color: #ffffff !important;
+    
+    &:hover {
+      background: #2563eb !important;
+      border-color: #2563eb !important;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+    }
+  }
+  
+  &--style-secondary {
+    background: var(--theme-elevation-100) !important;
+    border-color: var(--theme-elevation-200) !important;
+    
+    &:hover {
+      background: var(--theme-elevation-150) !important;
+    }
+  }
+}
+
+[data-theme="dark"] .btn {
+  &--style-secondary {
+    background: #334155 !important;
+    border-color: #475569 !important;
+    color: #e2e8f0 !important;
+    
+    &:hover {
+      background: #475569 !important;
+    }
+  }
+}
+
+/* ===== Status Badge/Pill Styles ===== */
+.pill {
+  border-radius: 9999px;
+  font-weight: 500;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+}
+
+[data-theme="dark"] .pill {
+  &--style-success,
+  &--has-action.pill--style-success {
+    background: #065f46 !important;
+    color: #6ee7b7 !important;
+  }
+  
+  &--style-error {
+    background: #7f1d1d !important;
+    color: #fca5a5 !important;
+  }
+  
+  &--style-warning {
+    background: #78350f !important;
+    color: #fcd34d !important;
+  }
+}
+
+/* ===== Header ===== */
+[data-theme="dark"] .app-header {
+  background: rgba(15, 23, 42, 0.95) !important;
+  border-bottom-color: #1e293b !important;
+  backdrop-filter: blur(10px);
+}
+
+/* ===== Collection List ===== */
+[data-theme="dark"] .collection-list {
+  &__header {
+    h1 {
+      color: #f8fafc !important;
+    }
+  }
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.template-default,
+.collection-list,
+.document-fields {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* ===== Custom Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--theme-elevation-100);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--theme-elevation-250);
+  border-radius: 4px;
+  
+  &:hover {
+    background: var(--theme-elevation-300);
+  }
+}
+
+[data-theme="dark"] {
+  ::-webkit-scrollbar-track {
+    background: #1e293b;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #475569;
+    
+    &:hover {
+      background: #64748b;
+    }
+  }
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 768px) {
+  .login__wrapper {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+}
